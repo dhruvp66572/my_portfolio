@@ -54,18 +54,18 @@ const Home = () => {
           {/* <!-- .navbar --> */}
 
           <div className="social-links">
-            <Link to="#" className="twitter">
-              <i className="bi bi-twitter"></i>
-            </Link>
-            <Link to="#" className="facebook">
+            <a href="https://github.com/dhruvp66572" className="github" target="_blank">
+              <i className="bi bi-github"></i>
+            </a>
+            <a href="#" className="facebook" target="_blank">
               <i className="bi bi-facebook"></i>
-            </Link>
-            <Link to="#" className="instagram">
+            </a>
+            <a href="https://www.instagram.com/dp__572/" className="instagram" target="_blank">
               <i className="bi bi-instagram"></i>
-            </Link>
-            <Link to="#" className="linkedin">
+            </a>
+            <a href="https://www.linkedin.com/in/dhruv-prajapati-088721260/" target="_blank" className="linkedin">
               <i className="bi bi-linkedin"></i>
-            </Link>
+            </a>
           </div>
         </div>
       </header>

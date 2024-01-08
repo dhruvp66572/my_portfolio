@@ -5,29 +5,29 @@ const Portfolioitem = () => {
     <div>
       <div
         id="glightbox-body"
-        class="glightbox-container glightbox-clean"
+        className="glightbox-container glightbox-clean"
         tabindex="-1"
         role="dialog"
         aria-hidden="false"
       >
-        <div class="gloader visible" style="display: none;"></div>
-        <div class="goverlay"></div>
-        <div class="gcontainer">
-          <div id="glightbox-slider" class="gslider">
-            <div class="gslide loaded">
-              <div class="gslide-inner-content">
-                <div class="ginner-container desc-bottom">
-                  <div class="gslide-media gslide-image">
+        <div className="gloader visible" style="display: none;"></div>
+        <div className="goverlay"></div>
+        <div className="gcontainer">
+          <div id="glightbox-slider" className="gslider">
+            <div className="gslide loaded">
+              <div className="gslide-inner-content">
+                <div className="ginner-container desc-bottom">
+                  <div className="gslide-media gslide-image">
                     <img
                       src="http://127.0.0.1:5500/assets/img/portfolio/portfolio-1.jpg"
                       alt=""
                       aria-labelledby="gSlideTitle_0"
-                      class="zoomable"
+                      className="zoomable"
                     />
                   </div>
-                  <div class="gslide-description description-bottom">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title" id="gSlideTitle_0">
+                  <div className="gslide-description description-bottom">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title" id="gSlideTitle_0">
                         App 1
                       </h4>
                     </div>
@@ -35,24 +35,24 @@ const Portfolioitem = () => {
                 </div>
               </div>
             </div>
-            <div class="gslide loaded current">
-              <div class="gslide-inner-content">
-                <div class="ginner-container desc-bottom">
-                  <div class="gslide-media gslide-image">
+            <div className="gslide loaded current">
+              <div className="gslide-inner-content">
+                <div className="ginner-container desc-bottom">
+                  <div className="gslide-media gslide-image">
                     <img
                       src="http://127.0.0.1:5500/assets/img/portfolio/portfolio-2.jpg"
                       alt=""
                       aria-labelledby="gSlideTitle_1"
-                      class="zoomable"
+                      className="zoomable"
                       style="max-height: calc(100vh - 85px)"
                     />
                   </div>
                   <div
-                    class="gslide-description description-bottom"
+                    className="gslide-description description-bottom"
                     style="max-width: 224px;"
                   >
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title" id="gSlideTitle_1">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title" id="gSlideTitle_1">
                         Web 3
                       </h4>
                     </div>
@@ -60,20 +60,20 @@ const Portfolioitem = () => {
                 </div>
               </div>
             </div>
-            <div class="gslide loaded">
-              <div class="gslide-inner-content">
-                <div class="ginner-container desc-bottom">
-                  <div class="gslide-media gslide-image">
+            <div className="gslide loaded">
+              <div className="gslide-inner-content">
+                <div className="ginner-container desc-bottom">
+                  <div className="gslide-media gslide-image">
                     <img
                       src="http://127.0.0.1:5500/assets/img/portfolio/portfolio-3.jpg"
                       alt=""
                       aria-labelledby="gSlideTitle_2"
-                      class="zoomable"
+                      className="zoomable"
                     />
                   </div>
-                  <div class="gslide-description description-bottom">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title" id="gSlideTitle_2">
+                  <div className="gslide-description description-bottom">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title" id="gSlideTitle_2">
                         App 2
                       </h4>
                     </div>
@@ -81,86 +81,86 @@ const Portfolioitem = () => {
                 </div>
               </div>
             </div>
-            <div class="gslide">
-              <div class="gslide-inner-content">
-                <div class="ginner-container">
-                  <div class="gslide-media"></div>
-                  <div class="gslide-description">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title"></h4>
-                      <div class="gslide-desc"></div>
+            <div className="gslide">
+              <div className="gslide-inner-content">
+                <div className="ginner-container">
+                  <div className="gslide-media"></div>
+                  <div className="gslide-description">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title"></h4>
+                      <div className="gslide-desc"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="gslide">
-              <div class="gslide-inner-content">
-                <div class="ginner-container">
-                  <div class="gslide-media"></div>
-                  <div class="gslide-description">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title"></h4>
-                      <div class="gslide-desc"></div>
+            <div className="gslide">
+              <div className="gslide-inner-content">
+                <div className="ginner-container">
+                  <div className="gslide-media"></div>
+                  <div className="gslide-description">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title"></h4>
+                      <div className="gslide-desc"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="gslide">
-              <div class="gslide-inner-content">
-                <div class="ginner-container">
-                  <div class="gslide-media"></div>
-                  <div class="gslide-description">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title"></h4>
-                      <div class="gslide-desc"></div>
+            <div className="gslide">
+              <div className="gslide-inner-content">
+                <div className="ginner-container">
+                  <div className="gslide-media"></div>
+                  <div className="gslide-description">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title"></h4>
+                      <div className="gslide-desc"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="gslide">
-              <div class="gslide-inner-content">
-                <div class="ginner-container">
-                  <div class="gslide-media"></div>
-                  <div class="gslide-description">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title"></h4>
-                      <div class="gslide-desc"></div>
+            <div className="gslide">
+              <div className="gslide-inner-content">
+                <div className="ginner-container">
+                  <div className="gslide-media"></div>
+                  <div className="gslide-description">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title"></h4>
+                      <div className="gslide-desc"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="gslide">
-              <div class="gslide-inner-content">
-                <div class="ginner-container">
-                  <div class="gslide-media"></div>
-                  <div class="gslide-description">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title"></h4>
-                      <div class="gslide-desc"></div>
+            <div className="gslide">
+              <div className="gslide-inner-content">
+                <div className="ginner-container">
+                  <div className="gslide-media"></div>
+                  <div className="gslide-description">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title"></h4>
+                      <div className="gslide-desc"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="gslide">
-              <div class="gslide-inner-content">
-                <div class="ginner-container">
-                  <div class="gslide-media"></div>
-                  <div class="gslide-description">
-                    <div class="gdesc-inner">
-                      <h4 class="gslide-title"></h4>
-                      <div class="gslide-desc"></div>
+            <div className="gslide">
+              <div className="gslide-inner-content">
+                <div className="ginner-container">
+                  <div className="gslide-media"></div>
+                  <div className="gslide-description">
+                    <div className="gdesc-inner">
+                      <h4 className="gslide-title"></h4>
+                      <div className="gslide-desc"></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <button class="gclose gbtn" aria-label="Close" data-taborder="3">
+          <button className="gclose gbtn" aria-label="Close" data-taborder="3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -181,7 +181,7 @@ const Portfolioitem = () => {
               </g>
             </svg>
           </button>
-          <button class="gprev gbtn" aria-label="Previous" data-taborder="2">
+          <button className="gprev gbtn" aria-label="Previous" data-taborder="2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -195,7 +195,7 @@ const Portfolioitem = () => {
               </g>
             </svg>
           </button>
-          <button class="gnext gbtn" aria-label="Next" data-taborder="1">
+          <button className="gnext gbtn" aria-label="Next" data-taborder="1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
