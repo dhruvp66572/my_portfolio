@@ -1,165 +1,119 @@
-import React from 'react'
-import Header from './Header'
+import { React, useState, useEffect } from "react";
+import Header from "./Header";
+import Portfolioitem from "./Portfolioitem";
+
 
 const Portfolio = () => {
+  const [data, setData] = useState([]);
+  const [pid, setPid] = useState("");
+  const fetchalldata = async () => {
+    // Get All  Data
+    // API Call
+    const response = await fetch(
+      `http://localhost:5000/api/projects/fetchallprojects`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data1 = await response.json();
+    setData(data1);
+    console.log(data1.length);
+    // console.log(data1[2]._id)
+  };
+
+  useEffect(() => {
+    fetchalldata();
+  }, []);
+
+  const HandleonClick = (id) => {
+    document.getElementById("portfolio").style.display = "none";
+    document.getElementById("pitem").style.display = "block";
+    console.log("clicked");
+    setPid(id);
+  };
+
   return (
-    <div>
-      <Header mode="portfolio" />
-
-      <section id="portfolio" className="portfolio section-show">
-    <div className="container">
-
-      <div className="section-title">
-        <h2>Portfolio</h2>
-        <p>My Works</p>
-      </div>
-
-      <div className="row">
-        <div className="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" className="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
+    <>
+      {/* <div> */}
+        <Header mode="portfolio" />
+        <div id="pitem" style={{ display: "none" }}>
+          <Portfolioitem data={data} Pid={pid} />
         </div>
-      </div>
-
-      <div className="row portfolio-container" style={{position: "relative", height: "863.97px"}}>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-app" style={{position: "absolute" ,left: "0px; top: 0px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-1.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+        <section id="portfolio" className="portfolio section-show" style={{height:"auto"}}>
+          <div className="container">
+            <div className="section-title">
+              <h2>Portfolio</h2>
+              <p>My Works</p>
+            </div>
+            {/* 
+            <div className="row">
+              <div className="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                  <li data-filter="*" className="filter-active">
+                    All
+                  </li>
+                  <li data-filter=".filter-app">App</li>
+                  <li data-filter=".filter-card">Card</li>
+                  <li data-filter=".filter-web">Web</li>
+                </ul>
               </div>
+            </div> */}
+
+            <div
+              className="row portfolio-container"
+              style={{ position: "relative", height: "1000px"}}
+            >
+              {data.map((item) => {
+                return (
+                  <div
+                    className="col-lg-4 portfolio-item filter-app"
+                    // style={{ position: "absolute", left: "0px; top: 0px" }}
+                  >
+                    <div className="portfolio-wrap">
+                      <img
+                        src="D:/Rect Js/my_portfolio/public/assets/img/projectimg/demo.png"
+                        className="img-fluid"
+                        alt="!!!!!!!!"
+                      />
+                      <div className="portfolio-info">
+                        <h4>{item.pname}</h4>
+                        {/* <p>App</p>  */}
+                        <div className="portfolio-links">
+                          <div
+                            onClick={() => {
+                              HandleonClick(item._id);
+                            }}
+                            data-gallery="portfolioDetailsGallery"
+                            data-glightbox="type: external"
+                            className="portfolio-details-lightbox portfolio-details-btn"
+                            title="Portfolio Details"
+                            width="100px"
+                            style={{
+                              cursor: "pointer",
+                              color: "white",
+                              fontSize: "30px",
+                            }}
+                            height="100px"
+                          >
+                            <i className="bx bx-link"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="col-lg-4 col-md-6 portfolio-item filter-web" style={{position: "absolute", left: "367.99px; top: 0px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-2.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* <Portfolioitem /> */}
+      {/* </div> */}
+    </>
+  );
+};
 
-        <div className="col-lg-4 col-md-6 portfolio-item filter-app" style={{position: "absolute", left: "735.98px; top: 0px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-3.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-card" style={{position: "absolute" ,left: "0px" ,top: "287.99px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-4.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-web" style={{position: "absolute", left: "367.99px", top: "287.99px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-5.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-app" style={{position: "absolute", left: "735.98px", top: "287.99px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-6.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-card" style={{position: "absolute", left: "0px", top: "575.98px;"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-7.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-card" style={{position: "absolute", left: "367.99px", top: "575.98px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-8.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-4 col-md-6 portfolio-item filter-web" style={{position: "absolute", left: "735.98px", top: "575.98px"}}>
-          <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-9.jpg" className="img-fluid" alt=""/>
-            <div className="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-    </div>
-  )
-}
-
-export default Portfolio
+export default Portfolio;

@@ -4,6 +4,8 @@ import Navbar from "./Components/Navbar";
 import Dashbord from "./Components/Dashbord";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contact_us_data from "./Components/Contact_us_data";
+import Project_Data from "./Components/Project_Data";
+import ImageDemo from "./Components/ImageDemo";
 
 function App() {
   return (
@@ -29,6 +31,14 @@ function App() {
                 <Route
                   path="/contact_us"
                   element={<Contact_us_data mode="contact_us" />}
+                />
+                <Route
+                  path="/projects"
+                  element={<Project_Data mode="project_data" />}
+                />
+                <Route
+                  path="/imagedemo"
+                  element={<ImageDemo mode="ImageDemo" />}
                 />
               </Routes>
               {/* <!-- Content wrapper --> */}

@@ -45,6 +45,18 @@ const Menu = (props) => {
               <div data-i18n="Account Settings">Contact Us Report</div>
             </Link>
           </li>
+          <li className={`menu-item ${props.mode==='/project_data'?'active':''}`}>
+            <Link to="/projects" className="menu-link menu-toggle">
+              <i className="menu-icon tf-icons bx bx-dock-top"></i>
+              <div data-i18n="Account Settings">Projects</div>
+            </Link>
+          </li>
+          <li className={`menu-item ${props.mode==='/ImageDemo'?'active':''}`}>
+            <Link to="/imagedemo" className="menu-link menu-toggle">
+              <i className="menu-icon tf-icons bx bx-dock-top"></i>
+              <div data-i18n="Account Settings">Image Upload Demo</div>
+            </Link>
+          </li>
         </ul>
       </aside>
     </>
